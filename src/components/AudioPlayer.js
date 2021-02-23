@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 const AudioPlayer = function(props) {
   return (
-    <audio src="https://ia800408.us.archive.org/27/items/HaloThemeSongOriginal/Halo%20Theme%20Song%20Original.mp3" controls autoplay />
+    <audio src="https://ia800408.us.archive.org/27/items/HaloThemeSongOriginal/Halo%20Theme%20Song%20Original.mp3" controls />
   );
 }
 export default AudioPlayer;

@@ -2,11 +2,12 @@ body {
   margin: 2em;
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
+  background-color: #fff1a8;
 }
 
 h1 {
   font-family: Trattatello, fantasy;
-  font-size: 4em;
+  font-size: 5em;
 }
 
 h4 {
@@ -32,6 +33,7 @@ input {
 #output {
   font-family: Trattatello, fantasy;
   font-size: 3em;
+
 }
 
 #butcherPig {
@@ -41,9 +43,9 @@ input {
 
 #inputPhrase{
   font-family: Trattatello, fantasy;
-  font-size: 1rem;
+  font-size: 1.5rem;
   height: 5rem;
-  width: 20rem;
+  width: 30rem;
   text-align: center;
 }
 
@@ -53,11 +55,26 @@ input {
   border-radius: .5em;
   padding: 1rem;
 }
+#box2{
+  background-color: white;
+  color: #fff;
+  border-radius: 50em;
+  padding: 1rem;
+}
 
 #musicText {
   font-family: Trattatello, fantasy;
 }
-
+#key {
+  font-family: Trattatello, fantasy;
+  color:red;
+  font-size: 1.4rem;
+}
+#key2 {
+  font-family: Trattatello, fantasy;
+  color:green;
+  font-size: 1.4rem;
+}
 
 @media only screen and (max-width: 650px) {
   #inputPhrase{
