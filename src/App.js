@@ -21,6 +21,16 @@ class App extends Component {
   // The "myPigLatinCodeHere" function is where you will put your logic to convert the sentence entered by the user to Pig Latin
 
   myPigLatinCodeHere = () => {
+
+    // Check if the phrase was empty
+    if (this.state.phrase === '') {
+      this.setState({
+        phraseTranslated: 'Please enter a valid word or phrase!!!',
+        translatedFontColor: "black"
+      })
+      return;
+    }
+
     // the variable "userInput" will contain the text input from the user modified into an array of words
     // no need to change this variable
     let userInput = this.state.phrase.split(" ")
@@ -92,7 +102,6 @@ class App extends Component {
           return currentWord.slice(vowelIndex) + currentWord.slice(0, vowelIndex) + "ay"
         }
       }
-     return  "Not Working Properly."
 
 
 
@@ -119,7 +128,7 @@ class App extends Component {
     // this method restarts the game by setting the original state
     // ACTION ITEM: when you are ready for your full user experience, delete the test words in phrase so that is assigned an empty string
     this.setState({
-      phrase: "alpha through yummy squeal queen fry",
+      phrase: "",
       phraseTranslated: "This is where your translated sentence will appear.",
       translatedFontColor: "red"
     })
@@ -158,6 +167,7 @@ class App extends Component {
             id="inputPhrase"
             onChange={ this.handleInput }
             value={ this.state.phrase }
+            placeholder="Enter word or phrase here"
           />
           <br />
           {/* button that called the setUpPreventDefault method which calls the myPigLatinCodeHere method */}
@@ -165,7 +175,7 @@ class App extends Component {
           <button onClick={ this.restartGame }>Clear</button>
         </div>
         <p id="key">Red: untranslated</p>
-        <p id="key2">green: translated</p>
+        <p id="key2">Green: translated</p>
         <div id="box2">
         <p id="output" style={{color: this.state.translatedFontColor}}>
           { this.state.phraseTranslated }
