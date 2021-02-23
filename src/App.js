@@ -27,18 +27,32 @@ class App extends Component {
       // ACTION ITEM: use "currentWord" as a starting point for your code
       console.log("currentWord:", currentWord)
 
-      let vowelsArray = currentWord.split("").filter(vowel => {
-        return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
-      })
-      console.log("vowelsArray:", vowelsArray)
+      // let vowelsArray = currentWord.split("").filter(vowel => {
+      //   let lowerCaseVowel = vowel.toLowerCase()
+      //   return lowerCaseVowel === "a" || lowerCaseVowel === "e" || lowerCaseVowel === "i" || lowerCaseVowel === "o" || lowerCaseVowel === "u"
+      // })
+      // console.log("vowelsArray:", vowelsArray)
 
       // your code here!
 
       // Remember: console.log is your friend :)
 
+      // Create an array of vowels that we'll check against
+      let vowels = ['a', 'e', 'i', 'o', 'u']
+
+      // Split the word into an array
+      let wordArray = currentWord.split("")
+
+      // Case 1 - Word starts with a vowel, add way at the end
+      if ( vowels.includes(wordArray[0].toLowerCase()) ) {
+        // Return a string of the current word plus 'way'
+        return currentWord + 'way'
+      } else {
+        return currentWord
+      }
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
+      // return currentWord
     })
 
 
