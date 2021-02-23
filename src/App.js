@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 
+
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -40,6 +42,7 @@ class App extends Component {
       // Create an array of vowels that we'll check against
       let vowels = ['a', 'e', 'i', 'o', 'u']
 
+      let vowelIndex = 0
       // Split the word into an array
       let wordArray = currentWord.split("")
 
@@ -47,13 +50,39 @@ class App extends Component {
       if ( vowels.includes(wordArray[0].toLowerCase()) ) {
         // Return a string of the current word plus 'way'
         return currentWord + 'way'
-      } else {
-        return currentWord
+      } else if (!currentWord.includes("a") && !currentWord.includes("e") && !currentWord.includes("i") && !currentWord.includes("o") && !currentWord.includes("u")) {
+
+        for(let i = 0; i < wordArray.length; i++) {
+          if("y".includes(wordArray[i])) {
+            vowelIndex = i
+            // vowelIndex = currentWord.indexOf(char)
+            break
+          }
+        }
+        //return final string
+        return currentWord.slice(vowelIndex) + currentWord.slice(0, vowelIndex) + "ay"
+    }else{
+//return a new string with the begininng consonents at the end + 'ay'
+    for(let i = 0; i < wordArray.length; i++) {
+      if(vowels.includes(wordArray[i])) {
+        if (wordArray[i-1] === "q" && wordArray[i] === "u") {
+          continue
+        }
+        vowelIndex = i
+        // vowelIndex = currentWord.indexOf(char)
+        break
       }
+    }
+//return final string
+  return currentWord.slice(vowelIndex) + currentWord.slice(0, vowelIndex) + "ay"
+
+    }
+
+
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       // return currentWord
-    })
+  })
 
 
     // joining the array back to a string of translated words
@@ -93,12 +122,12 @@ class App extends Component {
       <>
         <h1>Pig Latin Translator</h1>
         <img
-          src="https://lh3.googleusercontent.com/QvvsRY5ShwDNEouVMK8_z7QCwS3grkgd4mzZOlom23Hurralk54ObvsyEMM8ZSNR5pEFBeBMzltzEEcgi2llYJnhXTuXClN3njmMjtw3vgn8Go5jr40fHMNzfI64eYRrnHbZUutxCA=w2400"
+          src="https:www.holidogtimes.com/wp-content/uploads/2017/12/micro-pig-myth-cover.png"
           alt="pig with butcher cut names in pig latin"
           id="butcherPig"
         />
         <div id="box">
-          <h4>Enter phrase to be translated:</h4>
+          <h4>Enter phrase to be translated!:</h4>
           {/* user input field - every DOM event that happens in the input will call the handleChange method and update state */}
           <input
             type="text"
@@ -111,8 +140,9 @@ class App extends Component {
           <button onClick={ this.setUpPreventDefault }>Submit</button>
           <button onClick={ this.restartGame }>Clear</button>
         </div>
-        <p>{ this.state.phraseTranslated }</p>
-        <footer>Coded by ~your name here~</footer>
+        <p id="output"
+        >{ this.state.phraseTranslated }</p>
+        <footer>Coded by ~Allen & Angelo</footer>
       </>
     )
   }

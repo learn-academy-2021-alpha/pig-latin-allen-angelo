@@ -5,28 +5,41 @@ body {
 }
 
 h1 {
+  font-family: Trattatello, fantasy;
   font-size: 4em;
 }
 
+h4 {
+  font-family: Trattatello, fantasy;
+  font-size: 50px;
+
+}
 button {
+  font-family: Trattatello, fantasy;
   margin: 1em;
   border-radius: .5em;
   padding: 1em;
 }
 
 footer {
+  font-family: Trattatello, fantasy;
   padding: 2em;
 }
 
 input {
   border-radius: .5em;
 }
-
+#output {
+  font-family: Trattatello, fantasy;
+  font-size: 3em
+}
 #butcherPig {
-  width: 12rem;
+  width: 320px;
+  height: 150px;
 }
 
 #inputPhrase{
+  font-family: Trattatello, fantasy;
   font-size: 1rem;
   height: 5rem;
   width: 20rem;
@@ -34,7 +47,7 @@ input {
 }
 
 #box{
-  background-color: #606060;
+  background-color: #59cbff;
   color: #fff;
   border-radius: .5em;
   padding: 1rem;
